@@ -8,13 +8,12 @@ import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import javax.annotation.Nonnull;
 import java.net.MalformedURLException;
 import java.net.URL;
 
 public class BrowserstackMobileDriver implements WebDriverProvider {
 
-    static BrowserstackConfig config = ConfigFactory.create(BrowserstackConfig.class);
+    static BrowserstackConfig config = ConfigFactory.create(BrowserstackConfig.class, System.getProperties());
 
     public static URL getBrowserstackUrl() {
         try {
@@ -24,9 +23,8 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         }
     }
 
-    @Nonnull
     @Override
-    public WebDriver createDriver(@Nonnull Capabilities capabilities) {
+    public WebDriver createDriver( Capabilities capabilities) {
         MutableCapabilities mutableCapabilities = new MutableCapabilities();
         mutableCapabilities.merge(capabilities);
 
@@ -34,11 +32,11 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         mutableCapabilities.setCapability("browserstack.key", config.key());
         mutableCapabilities.setCapability("app", config.app());
 
-        mutableCapabilities.setCapability("device", "Google Pixel 4");
-        mutableCapabilities.setCapability("os_version", "11.0");
-        mutableCapabilities.setCapability("project", "JavaWikiTests");
-        mutableCapabilities.setCapability("build", "browserstack-build1");
-        mutableCapabilities.setCapability("name", "WikiTests");
+        mutableCapabilities.setCapability("device", "Google Pixel 3");
+        mutableCapabilities.setCapability("os_version", "9.0");
+        mutableCapabilities.setCapability("project", "First Java Project");
+        mutableCapabilities.setCapability("build", "browserstack-build-1");
+        mutableCapabilities.setCapability("name", "first_test");
 
         return new RemoteWebDriver(getBrowserstackUrl(), mutableCapabilities);
     }

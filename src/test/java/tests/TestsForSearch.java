@@ -12,28 +12,26 @@ public class TestsForSearch extends TestBase {
     @Test
     public void checkResultsHasItems() {
         mainPage
-                .back()
                 .setSearchInput("Java");
         mainPage
                 .checkSearchResults();
     }
 
-    @ValueSource(strings = {"TestCase"})
+    @ValueSource(strings = {"Java", "Jira"})
     @ParameterizedTest(name = "Проверка для значения {0}")
     public void mainSearch(String testData) {
         mainPage
-                .back()
                 .setSearchInput(testData);
         mainPage
                 .checkItem(testData);
     }
 
-    @ValueSource(strings = {"Deutsch"})
-    @ParameterizedTest(name = "Проверка для значения {0}")
-    public void addNewLanguage(String testData) {
+    @Test
+    public void changeLanguageAndCheckResults() {
         mainPage
-                .addNewLanguage(testData);
+                .setSearchInput("Slovakia")
+                .changeLanguage("Svenska");
         mainPage
-                .checkLanguage(testData);
+                .checkItem("Slovakien");
     }
 }
