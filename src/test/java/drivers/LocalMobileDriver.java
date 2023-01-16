@@ -16,7 +16,7 @@ import java.net.URL;
 public class LocalMobileDriver implements WebDriverProvider {
 
     File app = getApp();
-    static LocalConfig config = ConfigFactory.create(LocalConfig.class);
+    static LocalConfig config = ConfigFactory.create(LocalConfig.class, System.getProperties());
 
     public static URL getAppiumServerUrl() {
         try {
@@ -41,7 +41,7 @@ public class LocalMobileDriver implements WebDriverProvider {
     }
 
     private File getApp() {
-        String appPath = "";
+        String appPath = "src/test/resources/app/app-alpha-universal-release.apk";
         File app = new File(appPath);
         return app;
     }

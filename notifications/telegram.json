@@ -1,0 +1,16 @@
+{
+  "base": {
+    "project": "Wiki_mobileAutotestsProject",
+    "environment": "Browserstack",
+    "comment": "",
+    "reportLink": "",
+    "language": "en",
+    "allureFolder": "allure-report/",
+    "enableChart": true
+  },
+  "telegram": {
+    "token": "5903288618:AAGMzozNJGVcu5WiX-hw50DNGwy6J8303FA",
+    "chat": "-1001870386044",
+    "replyTo": ""
+  }
+}

@@ -3,35 +3,35 @@ package tests;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import tests.pages.MainPage;
+import tests.pages.SearchPage;
 
 public class TestsForSearch extends TestBase {
 
-    MainPage mainPage = new MainPage();
+    SearchPage searchPage = new SearchPage();
 
     @Test
     public void checkResultsHasItems() {
-        mainPage
+        searchPage
                 .setSearchInput("Java");
-        mainPage
+        searchPage
                 .checkSearchResults();
     }
 
     @ValueSource(strings = {"Java", "Jira"})
     @ParameterizedTest(name = "Проверка для значения {0}")
     public void mainSearch(String testData) {
-        mainPage
+        searchPage
                 .setSearchInput(testData);
-        mainPage
+        searchPage
                 .checkItem(testData);
     }
 
     @Test
     public void changeLanguageAndCheckResults() {
-        mainPage
+        searchPage
                 .setSearchInput("Slovakia")
                 .changeLanguage("Svenska");
-        mainPage
+        searchPage
                 .checkItem("Slovakien");
     }
 }

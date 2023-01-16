@@ -3,6 +3,7 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import drivers.BrowserstackMobileDriver;
+import drivers.LocalMobileDriver;
 import helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
@@ -14,29 +15,32 @@ import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 
 public class TestBase {
 
+    static String driver = System.getProperty("mobileDevice", "browserstack");
+
     @BeforeAll
     public static void setup() {
-        Configuration.browser = BrowserstackMobileDriver.class.getName();
+        if (driver.equals("browserstack")) {
+            Configuration.browser = BrowserstackMobileDriver.class.getName();
+        } else if (driver.equals("local")) {
+            Configuration.browser = LocalMobileDriver.class.getName();
+        } else {
+            throw new RuntimeException("Incorrect stand name");
+        }
         Configuration.browserSize = null;
     }
 
     @BeforeEach
     void startDriver() {
         addListener("AllureSelenide", new AllureSelenide());
-
         open();
     }
 
     @AfterEach
     public void tearDown() {
         String sessionId = sessionId().toString();
-
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
-
         closeWebDriver();
-
         Attach.video(sessionId);
-
     }
 }
