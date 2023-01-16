@@ -1,4 +1,4 @@
-# <img width="5%" title="Jenkins" src="images/logo/Wikipedia.svg"> Дипломный проект по автоматизации тестирования мобильного приложения Wikipedia
+# <img width="5%" title="Jenkins" src="images/logo/Wikipedia.svg"> Проект автоматизации тестирования мобильного приложения Wikipedia
 
 ##	Содержание
 
@@ -51,21 +51,21 @@ gradle clean test
 -Denvironment=local
 ```
 
-## <img width="4%" title="Jenkins" src="images/logo/Jenkins.svg"> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/tmaksyutov_diplom_mobile/)
+## <img width="4%" title="Jenkins" src="images/logo/Jenkins.svg"> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/15_Wiki_mobileAutotestsDiplomProject_Abramova/)
 
 Для запуска сборки необходимо нажать кнопку <code><strong>*Собрать сейчас*</strong></code>.
 
 <p align="center">
-  <img src="images/screenshot/jenkins.png" alt="Jenkins" width="800">
+  <img src="images/screen/Jenkins.png" alt="Jenkins" width="800">
 </p>
 
 После выполнения сборки, в блоке <code><strong>*История сборок*</strong></code> напротив номера сборки появится
 значок *Allure Report*, кликнув по которому, откроется страница со сформированным html-отчетом.
 
-## <img width="4%" title="Allure Report" src="images/logo/Allure.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/tmaksyutov_diplom_mobile/allure/)
+## <img width="4%" title="Allure Report" src="images/logo/Allure.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/15_Wiki_mobileAutotestsDiplomProject_Abramova/3/allure/)
 
 <p align="center">
-  <img src="images/screenshot/allure-report.png" alt="allure-report1" width="900">
+  <img src="images/screen/AllureReport.png" alt="allure-report1" width="900">
 </p>
 
 
@@ -87,7 +87,7 @@ gradle clean test
 После завершения сборки специальный бот, созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с отчетом о прогоне тестов.
 
 <p align="center">
-<img title="Telegram Notifications" src="images/screenshot/telegram.png">
+<img title="Telegram Notifications" src="images/screen/TelegramNotification.png">
 
 ## <img width="4%" title="Selenoid" src="images/logo/Browserstack.svg"> Пример запуска теста в Browserstack
 
@@ -95,9 +95,9 @@ gradle clean test
 
 На данном видео выполняется:
 
-- Проверка соотвествия страницы статьи заданным параметрам поиска
+- Проверка изменения языка результатов поиска при смене языка
 
 
 <p align="center">
-  <img title="Browserstack Video" src="images/gif/mobile_test.gif">
+  <img title="Browserstack Video" src="images/video/VideoTest.gif">
 </p>
