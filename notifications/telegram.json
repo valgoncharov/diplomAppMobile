@@ -2,9 +2,9 @@
   "base": {
     "project": "Wiki_mobileAutotestsProject",
     "environment": "Browserstack",
-    "comment": "",
+    "comment": "Some comment",
     "reportLink": "",
-    "language": "en",
+    "language": "ru",
     "allureFolder": "allure-report/",
     "enableChart": true
   },
