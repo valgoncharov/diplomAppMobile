@@ -61,7 +61,7 @@ gradle clean test
 </p>
 
 После выполнения сборки, в блоке <code><strong>*История сборок*</strong></code> напротив номера сборки отобразятся
-иконки *Allure Report* и *Allure TestOPS*, кликнуе по клику открывают страницы соответствующих отчетов.
+иконки *Allure Report* и *Allure TestOPS*, которые по клику открывают страницы соответствующих отчетов.
 
 <p align="center">
   <img src="images/screen/Jenkins2Mobile.png" alt="Jenkins" width="800">
