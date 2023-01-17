@@ -1,4 +1,8 @@
-# <img width="5%" title="Jenkins" src="images/logo/Wikipedia.svg"> Проект автоматизации тестирования мобильного приложения Wikipedia
+# Проект автоматизации тестирования мобильного приложения Wikipedia
+
+<p align="center">
+  <img width="50%" title="Jenkins" src="images/logo/wiki-logo.jpg">
+</p>
 
 ##	Содержание
 
