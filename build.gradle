@@ -1,6 +1,6 @@
 plugins {
     id 'java-library'
-    id 'io.qameta.allure' version '2.10.0'
+    id "io.qameta.allure" version "2.10.0"
     id "io.freefair.lombok" version "6.0.0-m2"
 }
 
@@ -8,51 +8,57 @@ repositories {
     mavenCentral()
 }
 
-def allureVersion = "2.19.0",
-    assertJVersion = "3.23.1",
-    slf4jVersion = "1.7.32",
-    restAssuredVersion = '5.3.0',
-    appiumVersion = '8.1.1',
-    commonsIoVersion = "2.11.0",
-    junitVersion = "5.9.0",
-    selenideVersion = "6.7.2",
-    ownerVersion = "1.0.12"
+def selenideVersion = "6.9.0",
+    junitVersion = "5.8.2",
+    slf4jVersion = "1.7.36",
+    javaFakerVersion = "1.0.2",
+    allureSelenideVersion = "2.19.0",
+    allureRestAssuredVersion = "2.17.2",
+    ownerVersion = "1.0.12",
+    restAssuredVersion = "4.5.1",
+    assertjVersion = "3.22.0",
+    jsonPathVersion = "2.7.0",
+    appiumVersion = "8.1.1",
+    commonsVersion = "2.11.0"
 
-
-allure
-        {
-            report {
-                version.set(allureVersion)
-            }
-            adapter {
-                aspectjWeaver.set(true)
-                frameworks {
-                    junit5 {
-                        adapterVersion.set(allureVersion)
-                    }
-                }
+group 'qa.guru'
+version '1.0-SNAPSHOT'
+allure {
+    report {
+        version.set(allureSelenideVersion)
+    }
+    adapter {
+        aspectjWeaver.set(true)
+        frameworks {
+            junit5 {
+                adapterVersion.set(allureSelenideVersion)
             }
         }
+    }
+}
 
 dependencies {
     testImplementation(
-            "io.rest-assured:rest-assured:$restAssuredVersion",
-            "io.qameta.allure:allure-rest-assured:$allureVersion",
-            "org.assertj:assertj-core:$assertJVersion",
-            "org.junit.jupiter:junit-jupiter:$junitVersion",
-            "org.slf4j:slf4j-simple:$slf4jVersion",
             "com.codeborne:selenide:$selenideVersion",
+            "com.github.javafaker:javafaker:$javaFakerVersion",
+            "io.qameta.allure:allure-selenide:$allureSelenideVersion",
+            "io.qameta.allure:allure-rest-assured:$allureRestAssuredVersion",
+            "org.junit.jupiter:junit-jupiter-api:$junitVersion",
             "org.aeonbits.owner:owner:$ownerVersion",
-            "io.qameta.allure:allure-selenide:$allureVersion",
+            "io.rest-assured:rest-assured:$restAssuredVersion",
+            "io.rest-assured:json-schema-validator:$restAssuredVersion",
+            "org.assertj:assertj-core:$assertjVersion",
+            "com.jayway.jsonpath:json-path:$jsonPathVersion",
             "io.appium:java-client:$appiumVersion",
-            "commons-io:commons-io:$commonsIoVersion"
+            "commons-io:commons-io:$commonsVersion"
     )
+    testRuntimeOnly(
+            "org.slf4j:slf4j-simple:$slf4jVersion",
+            "org.junit.jupiter:junit-jupiter-engine:$junitVersion")
 }
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
 }
 
 tasks.withType(Test) {
@@ -61,6 +67,7 @@ tasks.withType(Test) {
 
     testLogging {
         lifecycle {
+//            events "started", "failed"
             events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
