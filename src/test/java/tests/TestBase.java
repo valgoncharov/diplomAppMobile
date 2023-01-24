@@ -37,7 +37,6 @@ public class TestBase {
     @BeforeEach
     public void startDriver() {
         open();
-
         Attach.attachAsText("Режим запуска: ", config.deviceHost());
         Attach.attachAsText("Устройство:", config.deviceName());
         Attach.attachAsText("Версия приложения:", config.app());
@@ -47,10 +46,8 @@ public class TestBase {
     @AfterEach
     public void afterEach() {
         String sessionId = getSessionId();
-
         Attach.screenshotAs("Last screenshot");
         Attach.pageSource();
-
         closeWebDriver();
 
         if (config.deviceHost().contains("remote")) {
