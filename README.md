@@ -1,4 +1,4 @@
-# Проект автоматизации тестирования мобильного приложения Wikipedia
+# Диплом автотестирование мобильного приложения Wikipedia
 
 <p align="center">
   <img width="50%" title="Jenkins" src="images/logo/wiki-logo.jpg">
@@ -36,7 +36,7 @@
 
 ## :bookmark_tabs: Реализованные проверки:
 
-- Поиск в приложении: при введении значений в окно поиска есть список с результатами
+- При указании значений в поиске отображается список результатов
 - Поиск в приложении: результат соответствует введенным значениям
 - Смена языка в момент поиска: результаты верно меняют локализацию
 
@@ -56,7 +56,7 @@ gradle clean test
 -Denvironment=local
 ```
 
-## <img width="4%" title="Jenkins" src="images/logo/Jenkins.svg"> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/to do/)
+## <img width="4%" title="Jenkins" src="images/logo/Jenkins.svg"> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/GoncharovDiplomApp/)
 
 Для запуска сборки необходимо нажать кнопку <code><strong>*Собрать сейчас*</strong></code>.
 
@@ -71,7 +71,7 @@ gradle clean test
   <img src="images/screen/Jenkins2Mobile.png" alt="Jenkins" width="800">
 </p>
 
-## <img width="4%" title="Allure Report" src="images/logo/Allure.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/to do/3/allure/)
+## <img width="4%" title="Allure Report" src="images/logo/Allure.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/GoncharovDiplomApp/2/allure/)
 
 <p align="center">
   <img src="images/screen/AllureReport.png" alt="allure-report1" width="900">
