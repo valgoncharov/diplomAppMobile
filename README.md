@@ -58,7 +58,7 @@ gradle clean test
 
 ## <img width="4%" title="Jenkins" src="images/logo/Jenkins.svg"> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/GoncharovDiplomApp/)
 
-Для запуска сборки необходимо нажать кнопку <code><strong>*Собрать сейчас*</strong></code>.
+Запуск сборки при нажатии кнопки <code><strong>*Собрать сейчас*</strong></code>.
 
 <p align="center">
   <img src="images/screen/Jenkins1.png" alt="Jenkins" width="800">
@@ -83,7 +83,7 @@ gradle clean test
 ### Основной дашборд
 
 <p align="center">
-  <img src="images/screen/allreMainGraphMobile.png" alt="dashboard" width="900">
+  <img src="images/screen/Jenkins01.png" alt="dashboard" width="900">
 </p>
 
 ### Список тестов с результатами прогона
