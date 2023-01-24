@@ -19,7 +19,7 @@ public class SearchPage {
     public SelenideElement buttonSearchLanguage = $(AppiumBy.id("org.wikipedia.alpha:id/search_lang_button"));
     public ElementsCollection listOfLanguages = $$(AppiumBy.id("org.wikipedia.alpha:id/localized_language_name"));
 
-    @Step("Вводим в строке поиска {searchItem}")
+    @Step("Указать в строке поиска {searchItem}")
     public SearchPage setSearchInput(String searchItem) {
         search.click();
         searchInput.sendKeys(searchItem);
@@ -36,7 +36,7 @@ public class SearchPage {
         titleOfResult.shouldHave(text(testData));
     }
 
-    @Step("Меняем язык на {testData}")
+    @Step("Изменить язык на {testData}")
     public void changeLanguage(String testData) {
         buttonSearchLanguage.click();
         listOfLanguages.findBy(text(testData)).click();

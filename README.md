@@ -56,7 +56,7 @@ gradle clean test
 -Denvironment=local
 ```
 
-## <img width="4%" title="Jenkins" src="images/logo/Jenkins.svg"> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/15_Wiki_mobileAutotestsDiplomProject_Abramova/)
+## <img width="4%" title="Jenkins" src="images/logo/Jenkins.svg"> Запуск тестов в [Jenkins](https://jenkins.autotests.cloud/job/to do/)
 
 Для запуска сборки необходимо нажать кнопку <code><strong>*Собрать сейчас*</strong></code>.
 
@@ -71,14 +71,14 @@ gradle clean test
   <img src="images/screen/Jenkins2Mobile.png" alt="Jenkins" width="800">
 </p>
 
-## <img width="4%" title="Allure Report" src="images/logo/Allure.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/15_Wiki_mobileAutotestsDiplomProject_Abramova/3/allure/)
+## <img width="4%" title="Allure Report" src="images/logo/Allure.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/to do/3/allure/)
 
 <p align="center">
   <img src="images/screen/AllureReport.png" alt="allure-report1" width="900">
 </p>
 
 
-## <img width="4%" title="Allure TestOPS" src="images/logo/Allure_TO.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/launch/18488)
+## <img width="4%" title="Allure TestOPS" src="images/logo/Allure_TO.svg"> Интеграция с [Allure TestOps](https://allure.autotests.cloud/launch/to do8)
 
 ### Основной дашборд
 
